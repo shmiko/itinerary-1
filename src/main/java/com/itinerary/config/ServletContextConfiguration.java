@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Description;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.spring3.SpringTemplateEngine;
 import org.thymeleaf.spring3.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
@@ -16,7 +18,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.itinerary", useDefaultFilters = false, includeFilters = @ComponentScan.Filter(Controller.class))
-public class ServletContextConfiguration {
+public class ServletContextConfiguration extends WebMvcConfigurerAdapter {
 
 	@Bean
 	@Description("Thymeleaf template resolver serving HTML 5")
@@ -46,4 +48,9 @@ public class ServletContextConfiguration {
 
 		return viewResolver;
 	}
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/");
+    }
 }

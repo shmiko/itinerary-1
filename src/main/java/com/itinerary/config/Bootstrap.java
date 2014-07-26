@@ -17,8 +17,6 @@ public class Bootstrap implements WebApplicationInitializer {
 	@Override
 	public void onStartup(ServletContext container) throws ServletException {
 		
-		container.getServletRegistration("default").addMapping("/resource/*");
-
 		AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
 		rootContext.register(RootContextConfiguration.class);
 		container.addListener(new ContextLoaderListener(rootContext));
