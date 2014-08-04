@@ -27,7 +27,8 @@ public class ServletContextConfiguration extends WebMvcConfigurerAdapter {
 		templateResolver.setPrefix("/WEB-INF/html/");
 		templateResolver.setSuffix(".html");
 		templateResolver.setTemplateMode("LEGACYHTML5");
-
+		templateResolver.setCharacterEncoding("UTF-8");
+		
 		return templateResolver;
 	}
 
@@ -45,6 +46,7 @@ public class ServletContextConfiguration extends WebMvcConfigurerAdapter {
 	public ThymeleafViewResolver viewResolver() {
 		ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
 		viewResolver.setTemplateEngine(templateEngine());
+		viewResolver.setCharacterEncoding("UTF-8");
 
 		return viewResolver;
 	}
