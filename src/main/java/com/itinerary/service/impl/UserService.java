@@ -14,9 +14,16 @@ public class UserService implements IUserService {
 	private IUserDao userDao;
 
 	@Override
-	public void login(String email, String password) {
+	public User login(String email, String password) {
 		
 		User user = userDao.findByEmail(email);
+		return user;
+	}
+
+	@Override
+	public void addUser(User user) {
+	   userDao.save(user);
+		
 	}
 
 }

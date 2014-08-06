@@ -1,6 +1,9 @@
 package com.itinerary.service;
 
+import com.itinerary.domain.User;
+
 public interface IUserService {
 
-	void login(String email, String password);
+	User login(String email, String password);
+	void addUser(User user);
 }
