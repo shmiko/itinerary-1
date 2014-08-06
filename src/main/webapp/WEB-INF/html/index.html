@@ -187,75 +187,69 @@ js=d.createElement('script');js.id=id;js.async=true;js.src="//connect.facebook.n
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
-<button class="close ss-icon" data-dismiss="modal" type="button">close</button>
-<h3 id="myModalLabel" class="middle">Sign in to 36hrs</h3>
+<button class="close ss-icon" data-dismiss="modal" type="button">关闭</button>
+<h3 id="myModalLabel" class="middle">用户登陆</h3>
 </div>
 <div class="modal-body">
 <div class="middle">
-<button class="btn btn-facebook float-none" type="button" href="#"><span class="ss-social">facebook</span>Connect With Facebook</button>
-<div class="with-email">— Or sign in with your e-mail —</div>
+<button class="btn btn-facebook float-none" type="button" href="#"><span class="ss-social"></span>微博登录</button>
+<div class="with-email">已有账号，邮箱登陆 </div>
 </div>
 <form novalidate="novalidate" style="margin-bottom:12px;" id="signinForm" method="POST" action="user/login">
 <div class="message left-half"></div>
 <div class="control-group left-half">
-<input class="input-block-level" name="email" id="email" autofocus="" required="" placeholder="Email" type="email">
+<input class="input-block-level" name="email" id="email" autofocus="" required="" placeholder="邮箱" type="email">
 </div>
 <div class="control-group left-half">
-<input class="input-block-level" name="password" id="password" required="" placeholder="Password" type="password">
+<input class="input-block-level" name="password" id="password" required="" placeholder="密码" type="password">
 </div>
 <label class="checkbox no-padding-left middle"><input name="remember" type="checkbox">Remember me</label>
 <div class="control-group middle">
-<button type="submit" class="btn btn-sign-in btn-primary"><i class="icon-user icon-white"></i> Sign in</button>
+<button type="submit" class="btn btn-sign-in btn-primary"><i class="icon-user icon-white"></i> 登录</button>
 </div>
 </form>
 </div>
 <div class="modal-footer">
 <!--                <span>Forgot your Password? <a href="#forgot" data-dismiss="modal" data-toggle="modal" aria-hidden="true">Click Here</a></span><br>-->
-<span>Don't have an account? <a href="#signup" data-dismiss="modal" aria-hidden="true" data-toggle="modal">Sign Up →</a></span>
+<span>还没有账号t? <a href="#signup" data-dismiss="modal" aria-hidden="true" data-toggle="modal">现在注册 →</a></span>
 </div>
 </div>
 </div>
 </div> <!-- Sign Up Form -->
-<div id="signup" class="modal fade auth-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="signup" class="modal fade auth-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
-<button class="close ss-icon" data-dismiss="modal" type="button">close</button>
-<h4 class="modal-title dark">Sign up For 36hrs</h4>
-<h5>Sign up with Facebook for a more personalized experience.</h5>
-<!--                <a class="fb-button btn btn-block" href="#"><img src="--><!--blank.gif" class="fb-inline"/><span style="margin-left:-10px;">Connect <span style="font-weight:lighter">with</span> Facebook</span></a>-->
+<button class="close ss-icon" data-dismiss="modal" type="button">关闭</button>
+<h4 class="modal-title dark">用户注册</h4>
+<h5></h5>
 </div>
 <div class="modal-body">
-<button class="btn btn-facebook" type="button" href="#" ;"=""><span class="ss-social">facebook</span>Connect With Facebook</button>
+<button class="btn btn-facebook" type="button" href="#" ;"=""><span class="ss-social">weibo</span>新浪微博注册</button>
 <div class="accordian" id="sign-up-accordian">
-<h5 class="signUpBTN" data-toggle="collapse" data-parent="#sign-up-accordian" href="http://localhost/36hrs_new/cities#collapseOne"><a class="accordion-toggle">Or sign up with your e-mail</a></h5>
+<h5 class="signUpBTN" data-toggle="collapse" data-parent="#sign-up-accordian" href="http://localhost/36hrs_new/cities#collapseOne"><a class="accordion-toggle">邮箱注册</a></h5>
 <div id="collapseOne" class="accordion-body collapse">
 <div class="accordion-inner">
-<form novalidate="novalidate" style="margin-bottom:12px;" id="signupForm" method="POST">
+<form novalidate="novalidate" style="margin-bottom:12px;" id="signupForm" method="POST" action="user/signup">
 <input name="signupToken" id="signupToken" value="81355993053d30c4e4878d3.84193168" type="hidden">
 <div class="message" style="clear:both"></div>
 <div class="control-group">
-<input class="noshow" name="username" id="username" type="hidden">
+ <input class="input-block-level" name="username" id="username" type="text" placeholder="昵称">
 </div>
 <div class="control-group">
-<input class="input-block-level" name="email" id="email" required="" autofocus="" placeholder="Email" type="email">
+<input class="input-block-level" name="email" id="email" required="" autofocus="" placeholder="邮箱" type="email">
+</div>
+
+<div class="control-group">
+<input class="input-block-level" name="password" id="password" required="" placeholder="密码" type="password">
 </div>
 <div class="control-group">
-<input class="input-block-level" name="first_name" id="first_name" required="" placeholder="First Name" type="text">
-</div>
-<div class="control-group">
-<input class="input-block-level" name="last_name" id="last_name" placeholder="Last Name" type="text">
-</div>
-<div class="control-group">
-<input class="input-block-level" name="password" id="password" required="" placeholder="Password" type="password">
-</div>
-<div class="control-group">
-<input class="input-block-level" name="passwordConf" id="passwordConf" placeholder="Re-enter Password" type="password">
+<input class="input-block-level" name="passwordConf" id="passwordConf" placeholder="确认密码" type="password">
 </div>
 <br>
 <div class="control-group" style="float: right;">
-<button class="btn btn-small" data-dismiss="modal" aria-hidden="true">Go Back</button>
-<button type="submit" name="action" value="signup" class="btn  btn-primary btn-small">Create Account</button>
+<button class="btn btn-small" data-dismiss="modal" aria-hidden="true">返回</button>
+<button type="submit" name="action" value="signup" class="btn  btn-primary btn-small">我要注册</button>
 </div>
 </form>
 </div>
@@ -263,7 +257,7 @@ js=d.createElement('script');js.id=id;js.async=true;js.src="//connect.facebook.n
 </div>
 </div>
 <div class="modal-footer">
-<span>Already have an account? <a href="#signin" data-dismiss="modal" aria-hidden="true" data-toggle="modal">Sign In →</a></span>
+<span>已有账号? <a href="#signin" data-dismiss="modal" aria-hidden="true" data-toggle="modal">马上登陆 →</a></span>
 </div>
 </div>
 </div>
